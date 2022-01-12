@@ -5,7 +5,18 @@
  * @return {number}
  */
 var repeatedNTimes = function (nums) {
-  // Write your code here
+  let n = Math.floor(nums.length / 2)
+  let table = {}
+
+  for (let num of nums) {
+    table[num] = table[num] ? table[num] + 1 : 1
+  }
+
+  for (let key of Object.keys(table)) {
+    if (table[key] === n) return key
+  }
+
+  return -1
 };
 
 
