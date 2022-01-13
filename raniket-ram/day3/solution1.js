@@ -3,7 +3,15 @@
  * @return {number[]}
  */
 function solution(nums) {
-  // Write your code here
+  let ans = []
+  for (let i = 0; i < nums.length; i++) {
+    let smallerNumbersCount = 0
+    for (let j = 0; j < nums.length; j++) {
+      if (nums[i] > nums[j] && i !== j) smallerNumbersCount++
+    }
+    ans[i] = smallerNumbersCount
+  }
+  return ans
 };
 
 
