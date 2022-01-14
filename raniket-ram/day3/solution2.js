@@ -3,12 +3,32 @@
  * @return {number}
  */
 function solution(words) {
-  // Write your code here
+  let morseCodes = []
+  let code = [
+    ".-", "-...", "-.-.", "-..", ".",
+    "..-.", "--.", "....", "..", ".---",
+    "-.-", ".-..", "--", "-.", "---",
+    ".--.", "--.-", ".-.", "...", "-",
+    "..-", "...-", ".--", "-..-",
+    "-.--", "--.."
+  ]
+
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i]
+    let morseCode = ''
+    for (let j = 0; j < word.length; j++) {
+      morseCode += code[word.charCodeAt(j) - 97]
+    }
+    if (morseCodes.indexOf(morseCode) < 0)
+      morseCodes.push(morseCode)
+  }
+
+  return morseCodes.length
 };
 
 // -------------------------------- Driver -------------------------------- //
 
-let result1 = solution(["gin","zen","gig","msg"])
+let result1 = solution(["gin", "zen", "gig", "msg"])
 let expected1 = 2
 
 let result2 = solution(["a"])
