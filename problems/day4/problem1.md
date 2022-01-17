@@ -5,7 +5,6 @@
 ### LinkedList should be able to support the following operations:
   * `add`    Add a new item to linked list
   * `remove`    Remove an item from linked list
-  * `exists`    Return true if the item is found, else return false
   * `print`    Print all items in linked list
 
 
